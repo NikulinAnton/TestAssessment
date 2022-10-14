@@ -1,0 +1,11 @@
+.main-content {
+    overflow: hidden; }
+.main-content .content {
+    padding: 0 15px 10px 15px;}
+
+.page-title-box {
+  padding-bottom: 24px; }
+  .page-title-box h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px; }
