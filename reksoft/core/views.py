@@ -14,8 +14,8 @@ class TrucksView(View):
             form = FindTrucksForm(request.GET)
             if form.is_valid():
                 filters = dict()
-                if form.cleaned_data["side_number"]:
-                    filters["side_number"] = form.cleaned_data["side_number"]
+                if form.cleaned_data["model"]:
+                    filters["model"] = form.cleaned_data["model"]
                 trucks = Truck.objects.filter(**filters)
                 paginator = Paginator(trucks, 10)
                 page_number = request.GET.get("page", 1)
