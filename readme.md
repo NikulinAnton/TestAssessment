@@ -23,6 +23,6 @@
 2. Установить зависимости `pipenv install` (Если возникнут проблемы с lock файлом, то можно сгенерировать pipfile.lock файл ```pipenv lock``` после чего повторить 2 пункт)
 3. Создать .env файл на основе .env.template и заполнить
 5. Применить миграции `python3 manage.py migrate`
-6. Загрузить начальные данные командами:
-`python3 manage.py loaddata truck_models.json`
+6. Загрузить начальные данные командами:  
+`python3 manage.py loaddata truck_models.json`  
 `python3 manage.py loaddata trucks.json`
