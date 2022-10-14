@@ -16,14 +16,14 @@ class TrucksView(View):
                 filters = dict()
                 if form.cleaned_data["model"]:
                     filters["model"] = form.cleaned_data["model"]
-                trucks = Truck.objects.filter(**filters)
+                trucks = Truck.objects.filter(**filters).select_related('model')
                 paginator = Paginator(trucks, 10)
                 page_number = request.GET.get("page", 1)
                 page_obj = paginator.get_page(page_number)
                 context["page_obj"] = page_obj
         else:
             form = FindTrucksForm()
-            trucks = Truck.objects.all()
+            trucks = Truck.objects.all().select_related('model')
 
             paginator = Paginator(trucks, 10)
             page_number = request.GET.get("page", 1)
