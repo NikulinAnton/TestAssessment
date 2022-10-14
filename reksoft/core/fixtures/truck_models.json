@@ -1,0 +1,17 @@
+[{
+    "model": "core.TruckModel",
+    "id": 1,
+    "fields": {
+        "name": "БЕЛАЗ",
+        "max_weight_capacity": 120
+    }
+},
+{
+    "model": "core.TruckModel",
+    "id": 2,
+    "fields": {
+        "name": "Komatsu",
+        "max_weight_capacity": 110
+    }
+}
+]

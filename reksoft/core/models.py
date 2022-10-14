@@ -9,6 +9,9 @@ class TruckModel(models.Model):
     name = models.CharField(
         max_length=64, verbose_name="Название", unique=True, db_index=True
     )
+    max_weight_capacity = models.PositiveSmallIntegerField(
+        verbose_name="Максимальная грузоподъемность"
+    )
 
     class Meta:
         ordering = ["name"]
@@ -25,9 +28,6 @@ class Truck(ParanoidModel):
     )
     model = models.ForeignKey(
         TruckModel, on_delete=models.PROTECT, verbose_name="Модель самосвала"
-    )
-    max_weight_capacity = models.PositiveSmallIntegerField(
-        verbose_name="Максимальная грузоподъемность"
     )
     current_cargo_weight = models.PositiveSmallIntegerField(
         verbose_name="Текущий вес груза", blank=True, default=0
