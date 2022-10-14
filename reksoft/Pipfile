@@ -11,6 +11,8 @@ black = "*"
 isort = "*"
 pre-commit = "*"
 django-paranoid = "*"
+django-case-insensitive-field = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
