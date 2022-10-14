@@ -10,34 +10,23 @@
           <table class="table align-middle table-nowrap mb-0">
             <thead class="table-light">
             <tr>
-
               <th class="align-middle">Бортовой номер</th>
               <th class="align-middle">Модель</th>
-              <th class="align-middle">Макс. грузоподъёмность</th>
-              <th class="align-middle">Текущий вес</th>
+              <th class="align-middle">Макс. грузоподъёмность,  т.</th>
+              <th class="align-middle">Текущий вес,  т.</th>
               <th class="align-middle">Перегруз, %</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody class="align-middle">
             {% for truck in page_obj %}
             <tr>
               <td>{{ truck.side_number|upper }}</td>
-              <td>
-                {{ truck.model.name }}
-              </td>
-              <td>
-                {{ truck.max_weight_capacity }} т.
-              </td>
-              <td>
-                {{ truck.current_cargo_weight }} т.
-              </td>
-              </td>
-              <td>
-                Пока нет
-              </td>
+              <td>{{ truck.model.name }}</td>
+              <td>{{ truck.model.max_weight_capacity }}</td>
+              <td>{{ truck.current_cargo_weight }}</td>
+              <td>{{ truck.overload|floatformat|default:"Нет перегрузки" }}</td>
             </tr>
             {% endfor %}
-
             </tbody>
           </table>
         </div>

@@ -47,3 +47,9 @@ class Truck(ParanoidModel):
 
     def __str__(self):
         return f"{self.side_number}"
+
+    @property
+    def overload(self):
+        max_weight_capacity = getattr(self.model, "max_weight_capacity")
+        overload_value = ((self.current_cargo_weight / max_weight_capacity) * 100) - 100
+        return overload_value if overload_value > 0 else None
